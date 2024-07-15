@@ -32,3 +32,15 @@ result = var1 + var2
 print(id(result))
 
 print("Numbers are equal: ", result == var3)
+
+# keyword "in"
+
+a = "text1ABC"
+b = "AB"
+print(b in a)
+
+a = ['one', 'two']
+b = 'one'
+c = 'on'
+print(b in a)
+print(c in a)
