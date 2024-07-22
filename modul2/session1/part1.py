@@ -65,5 +65,5 @@ result_bool2 = true or false
 print(result_bool2)
 
 # Input function
-user_input = input("Give name: ") # interacts with stdin
+user_input = input("Give name: ")  # interacts with stdin
 print("User provided input:", user_input)
