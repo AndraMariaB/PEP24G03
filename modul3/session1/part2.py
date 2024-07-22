@@ -13,3 +13,13 @@ for word in word_list:
 
 # for number in 100:
 #     print(number)
+
+# while loops
+i = 200
+while i > 100:
+    print(i)
+    i = i - 1
+print("while loop is done")
+
+# while True:
+#     print("this will run for ever")
