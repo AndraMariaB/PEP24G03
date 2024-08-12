@@ -1,0 +1,1 @@
+# GET 2 numbers from user and calculate area in a function 
