@@ -8,7 +8,7 @@ shopping_cart = {'apple': 3, "banana": 4, "orange": 5}
 shop_names = {"LIDL": shop1, "KAUF": shop2, "Auch": shop3}
 
 
-def best_buy(items_to_by, shops) -> tuple[str, str]:
+def best_buy(items_to_by, shops) -> tuple[str, int]:
     return shop_name, cost
 
 
