@@ -29,3 +29,36 @@ angajat5 = {
     'Salar': 12900,
 }
 lista_dict = [angajat1, angajat2, angajat3, angajat4, angajat5]
+
+
+def list_well_payed_employees(lista):
+    for angajat in lista:
+        if angajat.get("Salar") > 5000:
+            print(f"{angajat.get('nume')}-->{angajat.get('departament')}{angajat.get('ID')}")
+
+
+list_well_payed_employees(lista_dict)
+
+
+def list_employees(lista):
+    lista_employees = []
+    for angajat in lista:
+        if not angajat.get('departament') == 'Management':
+            lista_employees.append(angajat)
+    return lista_employees
+
+
+print(list_employees(lista_dict))
+
+
+def hr_average(lista):
+    sum = 0
+    number = 0
+    for angajat in lista:
+        if angajat.get('departament') == 'HR':
+            sum += angajat.get('Salar')
+            number += 1
+    return sum / number
+
+
+print(hr_average(lista_dict))
