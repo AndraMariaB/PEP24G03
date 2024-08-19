@@ -9,3 +9,25 @@ mi-a oferit cel mai mare soc si surpriza din orice eveniment din vitța mea aven
 acum, dupa acest interval lung, mă trezesc emotionat cand ma gandesc la asta si simt din nou acel
 potop brusc de bucurie, uimire si neincredere care mi-a cufundat cu totul mintea."""
 
+
+def get_words(string_content: str):
+    result = string_content.split()
+    new_result = []
+    for word in result:
+        new_result.append(word.strip(",."))
+    return new_result
+
+
+print(get_words(text))
+
+
+def count_letters(list_of_strings):
+    count = {}
+    for word in list_of_strings:
+        for letter in word:
+            count[letter.lower()] = count.get(letter.lower(), 0) + 1
+    return count
+
+
+result = count_letters(get_words(text))
+print(result)
