@@ -1,4 +1,4 @@
-# Crate function for a shop selecter based on price
+# Crate function for a shop selector based on price
 
 shop1 = {'apple': 100, "banana": 120, "orange": 95, "plums": 200}
 shop2 = {'apple': 103, "banana": 122, "orange": 93, "pumpkins": 150}
