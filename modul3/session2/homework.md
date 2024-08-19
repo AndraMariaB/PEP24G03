@@ -1,0 +1,1 @@
+Problema 2 din cap3.2Your status is set to do not disturb. You'll only get notifications for urgent messages and from your priority contacts.
