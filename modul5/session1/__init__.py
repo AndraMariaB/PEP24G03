@@ -1,0 +1,1 @@
+from modul5.session1.part1 import VAR1
