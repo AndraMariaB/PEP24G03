@@ -10,11 +10,12 @@ class Shop:
         info.update({"price": int(price)})
         info.update({"stock": info.get("stock", 0) + int(stock)})
         self.stock[name] = info
+        self.color = "blue"
         return "done"
 
-
+# Shop.stock
 s = Shop()
-
+# s.stock
 print(type(s))
 print(id(s))
 print(Shop.color)
