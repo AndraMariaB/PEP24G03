@@ -11,8 +11,8 @@ MENIU_2 = '''
 2.Vizualizare
 3.Iesire la meniul principal
 '''
-HEADER1 = f"{80 * '='}\n{" CATEGORII ".center(80, '=')}\n{80 * '='}"
-HEADER2 = f"{" PRODUSE ".center(80, '=')}\n{80 * '='}"
+HEADER1 = f"{80 * '='}\n{' CATEGORII '.center(80, '=')}\n{80 * '='}"
+HEADER2 = f"{' PRODUSE '.center(80, '=')}\n{80 * '='}"
 CLASS_MAPPING = {
     'haine': Haine,
     'accesorii': Accesorii,
@@ -94,6 +94,22 @@ class Magazin():
                 continue
             self.stock.append(CLASS_MAPPING[category_class](nume_produs, int(pret_produs), int(stock_produs)))
             return
+
+    def view_product(self):
+        self.stock.sort(key=sort_categories)
+        category_change = ""
+        for product in self.stock:
+            if category_change != product.__class__.__name__:
+                print("print a category")  # HOMEWORK!!!
+                category_change = product.__class__.__name__
+            print(f"nume:{product.name}")
+            print(f"price:{product.price}")
+            print(f"stock:{product.stock}")
+            print(f"{80 * '-'}")
+
+
+def sort_categories(product: Products):
+    return product.__class__.__name__
 
 
 MAG = Magazin()
