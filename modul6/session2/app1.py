@@ -4,7 +4,13 @@ Welcome
 2.Produse
 3.Iesire
 '''
+MENIU_2 = '''
+1.Adaugare
+2.Vizualizare
+3.Iesire la meniul principal
+'''
 HEADER1 = f"{80 * '='}\n{" CATEGORII ".center(80, '=')}\n{80 * '='}"
+HEADER2 = f"{" PRODUSE ".center(80, '=')}\n{80 * '='}"
 
 
 class Products:
@@ -57,7 +63,16 @@ class Magazin():
             print("--- ", cat)
 
     def products(self):
-        pass
+        while True:
+            print(HEADER2)
+            print(MENIU_2)
+            option = int(input("Introduceti optiunea: "))
+            if option == 3:
+                return
+            elif option == 1:
+                self.add_product()
+            elif option == 2:
+                self.view_product()
 
 
 MAG = Magazin()
