@@ -1,3 +1,5 @@
+from modul6.session2.part1 import Haine, Accesorii
+
 MENIU_1 = '''
 Welcome
 1.Categoii
@@ -11,6 +13,10 @@ MENIU_2 = '''
 '''
 HEADER1 = f"{80 * '='}\n{" CATEGORII ".center(80, '=')}\n{80 * '='}"
 HEADER2 = f"{" PRODUSE ".center(80, '=')}\n{80 * '='}"
+CLASS_MAPPING = {
+    'haine': Haine,
+    'accesorii': Accesorii,
+}
 
 
 class Products:
@@ -36,7 +42,6 @@ class Accesorii(Products):
 
 
 class Magazin():
-
     def __init__(self):
         self.stock = []
         self.stock.append(Haine(name="bluza", price=50, stock=500))
@@ -44,7 +49,6 @@ class Magazin():
     def run(self):
         while True:
             print(MENIU_1)
-
             option = int(input("Alegeti optiunea: "))
             if option == 3:
                 quit()
@@ -73,6 +77,23 @@ class Magazin():
                 self.add_product()
             elif option == 2:
                 self.view_product()
+
+    def add_product(self):
+        while True:
+            category_class = input("Introduceti numele categoriei: ")
+            if category_class not in CLASS_MAPPING:
+                continue
+            nume_produs = input("Introduceti numele produsului: ")
+            if not nume_produs.isalnum():
+                continue
+            pret_produs = input("Introduceti pretul produsului: ")
+            if not pret_produs.isnumeric():
+                continue
+            stock_produs = input("Introduceti stocul produsului: ")
+            if not stock_produs.isnumeric():
+                continue
+            self.stock.append(CLASS_MAPPING[category_class](nume_produs, int(pret_produs), int(stock_produs)))
+            return
 
 
 MAG = Magazin()
