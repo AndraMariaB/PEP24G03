@@ -116,6 +116,8 @@ class C:
         return self.color
 
 
+
+
 a = A()
 b = B()
 c = C()
