@@ -50,31 +50,81 @@
 #
 # for element in o:
 #     print(element)
-
-my_list = [obj for obj in range(4)]
-print(my_list)
-my_dict = {obj: "value" for obj in range(4)}
-print(my_dict)
-my_gen = (obj for obj in range(4))
-print(my_gen)
-print(id(my_gen))
-print(id(my_gen.__iter__()))
-print(next(my_gen))
-print(next(my_gen))
-print(my_gen.__next__())
-print(next(my_gen))
-
-
+#
+# my_list = [obj for obj in range(4)]
+# print(my_list)
+# my_dict = {obj: "value" for obj in range(4)}
+# print(my_dict)
+# my_gen = (obj for obj in range(4))
+# print(my_gen)
+# print(id(my_gen))
+# print(id(my_gen.__iter__()))
 # print(next(my_gen))
-
-def my_gen_func(value_list: list):
-    for number in value_list:
-        yield number
-
-
-my_generator = my_gen_func([1, 2, 3])
-print(type(my_generator))
-print(next(my_generator))
-print(next(my_generator))
-print(next(my_generator))
+# print(next(my_gen))
+# print(my_gen.__next__())
+# print(next(my_gen))
+#
+#
+# # print(next(my_gen))
+#
+# def my_gen_func(value_list: list):
+#     for number in value_list:
+#         yield number
+#
+#
+# my_generator = my_gen_func([1, 2, 3])
+# print(type(my_generator))
 # print(next(my_generator))
+# print(next(my_generator))
+# print(next(my_generator))
+# # print(next(my_generator))
+
+
+class A:
+    color = "red"
+
+    def __add__(self, other):
+        new = self.__class__()
+        new.color = self.color + other.color
+        return new
+
+    def __str__(self):
+        return self.color
+
+
+class B:
+    color = "blue"
+
+    def __add__(self, other):
+        new = self.__class__()
+        new.color = self.color + other.color
+        return new
+
+    def __str__(self):
+        return self.color
+
+
+class C:
+    color = "green"
+
+    def __add__(self, other):
+        new = self.__class__()
+        new.color = self.color + other.color
+        return new
+
+    def __str__(self):
+        return self.color
+
+
+a = A()
+b = B()
+c = C()
+
+objects = [a, b]
+
+print(a + b)
+print(b.__add__(a))
+print(a + b + c)
+
+# average = len(a + b) / len(objects)
+# print(average)
