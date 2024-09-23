@@ -1,5 +1,5 @@
 """
-Clean up all non alphanumeric chars using filter and lambda function
+Clean up all non alfa-numeric chars using filter and lambda function
 """
 text = "$ Hello World #; "
 
