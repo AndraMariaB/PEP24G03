@@ -10,5 +10,21 @@ products = {
 
 }
 
-def get_warranty(name: str) -> bool:
-    pass
+
+def get_warranty_expired(name: str) -> bool:
+    product_expiration_date = products.get(name, None)
+    if not product_expiration_date:
+        return True
+    # product_expiration_date._year = product_expiration_date.year + 3
+    warranty = datetime.datetime(
+        year=product_expiration_date.year + 3,
+        month=product_expiration_date.month,
+        day=product_expiration_date.day,
+    )
+    if datetime.datetime.now() < warranty:
+        return False
+    return True
+
+
+if __name__ == '__main__':
+    print(get_warranty_expired('product3'))
