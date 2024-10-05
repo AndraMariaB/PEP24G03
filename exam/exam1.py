@@ -1,7 +1,7 @@
 """
 A production facility needs an iterable object to keep track products
 A class called "Production" will store the information needed.
-Each item created in factory will have a string serial number "XXXXXX"
+Each item created in factory will have a string serial number "XXXXXXXX"
 Iterating objects created with Production class will return serial of all produced items.
 1) 40p: Definition
     a) 10p: Basic class structure of Production
