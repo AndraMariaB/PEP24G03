@@ -1,0 +1,6 @@
+var1 = input("Introduceti salarile separate de virgula: ")
+var2 = input("Introduceti procentul de marire: ")
+salarii = list(map(lambda salar: int(salar), var1.split(",")))
+salarii_marite = list(map(lambda salariu: (int(var2) + 100) / 100 * salariu, salarii))
+print("Salarile marite sunt: ")
+print(*salarii_marite, sep="\n")
